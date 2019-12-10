@@ -1,0 +1,50 @@
+<div class="center-card animated fadeIn">
+    <mat-card>
+        <mat-card-header>Login</mat-card-header>
+
+        <form (ngSubmit)="login(form)" #form="ngForm">
+            <mat-card-content>
+                <mat-list>
+                    <!-- <span class="text-danger">El correo es obligatorio</span> -->
+                    <mat-list-item>
+                        <mat-form-field>
+                            <input  matInput 
+                                    type="email" 
+                                    name="email" 
+                                    [(ngModel)]="user.email"
+                                    required
+                                    email
+                                    placeholder="Email">
+                            <mat-error *ngIf="form.submitted && form.controls['email'].hasError('required')">Obligatorio</mat-error>
+                            <mat-error *ngIf="form.submitted && form.controls['email'].hasError('minlength')">Debe tener mas de 2 caracteres</mat-error>
+                        </mat-form-field>
+                    </mat-list-item>
+                    
+                    <mat-list-item>
+                        <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+                        <mat-form-field>
+                            <input  matInput
+                                    type="password" 
+                                    name="password"
+                                    [(ngModel)]="user.password"
+                                    required
+                                    placeholder="Password">
+                            <mat-error *ngIf="form.submitted && form.controls['password'].hasError('required')">Obligatorio</mat-error>
+                        </mat-form-field>
+                    </mat-list-item>
+                    
+                    <mat-list-item>
+                        <mat-checkbox id="ckb1" name="remember-me">Recordar mi usuario</mat-checkbox>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+
+            <mat-card-footer>
+                <a routerLink="/registro" style="margin-right: 20px;">¿No tienes cuenta?</a>
+
+                <button mat-raised-button type="submit" color="primary">INGRESAR</button>
+            </mat-card-footer>
+        </form>
+    </mat-card>
+</div>
+

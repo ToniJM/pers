@@ -1,0 +1,58 @@
+<div class="center-card animated fadeIn">
+    <mat-card>
+        <mat-card-header>Crear nueva cuenta</mat-card-header>
+        <form (ngSubmit)='onSubmit(form)' #form="ngForm">
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>
+                        <!-- <span class="text-danger">El correo es obligatorio</span> -->
+                        <mat-form-field width="100%">
+                            <input  matInput  
+                                    type="email" 
+                                    name="email" 
+                                    [(ngModel)]="user.email"
+                                    required
+                                    email
+                                    placeholder="Email">
+                            <mat-error *ngIf="form.submitted && form.controls['email'].hasError('required')">Obligatorio</mat-error>
+                            <mat-error *ngIf="form.submitted && form.controls['email'].hasError('email')">Ingrese un email valido</mat-error>
+                        </mat-form-field>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <!-- <span class="text-danger">El nombre es obligatorio</span> -->
+                        <mat-form-field>
+                            <input  matInput 
+                                    type="text" 
+                                    name="name" 
+                                    [(ngModel)]="user.name"
+                                    required
+                                    minlength="2"
+                                    placeholder="Nombre y apellidos">
+                            <mat-error *ngIf="form.submitted && form.controls['name'].hasError('required')">Obligatorio</mat-error>
+                            <mat-error *ngIf="form.submitted && form.controls['name'].hasError('minlength')">Debe tener mas de 2 caracteres</mat-error>
+                        </mat-form-field>
+                    </mat-list-item>
+                    <mat-list-item>    
+                        <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+                        <mat-form-field>
+                            <input  matInput
+                                    type="password" 
+                                    name="password" 
+                                    [(ngModel)]="user.password"
+                                    required
+                                    minlength="6"
+                                    placeholder="Password">
+                            <mat-error *ngIf="form.submitted && form.controls['password'].hasError('required')">Obligatorio</mat-error>
+                            <mat-error *ngIf="form.submitted && form.controls['password'].hasError('minlength')">Debe tener mas de 6 caracteres</mat-error>
+                        </mat-form-field>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+            <mat-card-footer>
+                <a routerLink="/login" class="txt1">¿Ya tienes cuenta? / Ingresar</a>
+
+                <button mat-raised-button type="submit" color="primary">CREAR CUENTA</button>
+            </mat-card-footer>
+        </form>
+    </mat-card>
+</div>  
