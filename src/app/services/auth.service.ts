@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   logout() {
-
+    localStorage.removeItem('token');
   }
 
   login(user: UserModel) {
@@ -34,7 +34,7 @@ export class AuthService {
       authData
     ).pipe(
       map(res => {
-        this.saveToken(res['idToken']);
+        this.saveToken(res['idToken'], res['expiresIn']);
         return res;
       })
     );
@@ -57,9 +57,14 @@ export class AuthService {
     );
   }
 
-  private saveToken(idToken: string) {
+  private saveToken(idToken: string, expiresIn: string) {
     this.userToken = idToken;
     localStorage.setItem('token', idToken);
+
+    const today = new Date();
+    today.setSeconds(+expiresIn);
+    localStorage.setItem('expires', today.getTime().toString());
+
   }
 
   private readToken() {
@@ -70,5 +75,16 @@ export class AuthService {
     }
 
     return this.userToken;
+  }
+
+  authenticated(): boolean {
+    if (this.userToken.length < 2 || !localStorage.getItem('expires')) {
+      return false;
+    }
+
+    const expires = +localStorage.getItem('expires');
+    const now = new Date();
+
+    return expires > now.getTime();
   }
 }

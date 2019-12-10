@@ -39,7 +39,12 @@
                     </mat-list-item>
                     
                     <mat-list-item>
-                        <mat-checkbox id="ckb1" name="remember-me" [disabled]="form.disabled">Recordar mi usuario</mat-checkbox>
+                        <mat-checkbox id="ckb1"
+                                        name="rememberme"
+                                        [(ngModel)]="rememberme"
+                                        [disabled]="form.disabled">
+                            Recordar mi usuario
+                        </mat-checkbox>
                     </mat-list-item>
                 </mat-list>
             </mat-card-content>
