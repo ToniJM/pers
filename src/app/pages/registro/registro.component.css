@@ -15,17 +15,20 @@
 
 .mat-card {
     min-width: 300px;
+    overflow: hidden;
 }
 
-.mat-card-footer {
-    padding: 10px;
+.mat-card .mat-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.mat-card-footer a {
+.mat-card-actions a {
     font-size: 12px;
-    margin-right: 20px;
+    margin: 10px;
 }
 
-.mat-card-footer button {
+.mat-card-actions button {
     float: right;
 }

@@ -1,7 +1,12 @@
 <div class="center-card animated fadeIn">
-    <mat-card>
-        <mat-card-header>Crear nueva cuenta</mat-card-header>
-        <form (ngSubmit)='onSubmit(form)' #form="ngForm">
+    <form (ngSubmit)='onSubmit(form)' #form="ngForm">
+        <mat-card>
+            <mat-progress-bar [mode]="waiting ? 'indeterminate' : 'determinate'" value="100"></mat-progress-bar>
+            
+            <mat-card-header>
+                <mat-card-title>Registrate</mat-card-title>
+            </mat-card-header>
+
             <mat-card-content>
                 <mat-list>
                     <mat-list-item>
@@ -48,11 +53,12 @@
                     </mat-list-item>
                 </mat-list>
             </mat-card-content>
-            <mat-card-footer>
+
+            <mat-card-actions>
                 <a routerLink="/login" class="txt1">¿Ya tienes cuenta? / Ingresar</a>
 
-                <button mat-raised-button type="submit" color="primary">CREAR CUENTA</button>
-            </mat-card-footer>
-        </form>
-    </mat-card>
+                <button mat-raised-button type="submit" color="primary" [disabled]="form.disabled">CREAR CUENTA</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
 </div>  

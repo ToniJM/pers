@@ -1,8 +1,13 @@
 <div class="center-card animated fadeIn">
-    <mat-card>
-        <mat-card-header>Login</mat-card-header>
+    
+    <form (ngSubmit)="login(form)" #form="ngForm">
+        <mat-card>
+            <mat-progress-bar [mode]="waiting ? 'indeterminate' : 'determinate'" value="100"></mat-progress-bar>
+            
+            <mat-card-header>
+                <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
 
-        <form (ngSubmit)="login(form)" #form="ngForm">
             <mat-card-content>
                 <mat-list>
                     <!-- <span class="text-danger">El correo es obligatorio</span> -->
@@ -34,17 +39,17 @@
                     </mat-list-item>
                     
                     <mat-list-item>
-                        <mat-checkbox id="ckb1" name="remember-me">Recordar mi usuario</mat-checkbox>
+                        <mat-checkbox id="ckb1" name="remember-me" [disabled]="form.disabled">Recordar mi usuario</mat-checkbox>
                     </mat-list-item>
                 </mat-list>
             </mat-card-content>
 
-            <mat-card-footer>
-                <a routerLink="/registro" style="margin-right: 20px;">¿No tienes cuenta?</a>
+            <mat-card-actions>
+                <a routerLink="/registro">¿No tienes cuenta?</a>
 
-                <button mat-raised-button type="submit" color="primary">INGRESAR</button>
-            </mat-card-footer>
-        </form>
-    </mat-card>
+                <button mat-raised-button type="submit" color="primary" [disabled]="form.disabled">INGRESAR</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
 </div>
 
