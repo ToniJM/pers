@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firabase: {
-    apiKey: ''
+    apiKey: 'FIREBASE PROJECT API KEY HERE'
   }
 };
 
