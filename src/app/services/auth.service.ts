@@ -51,7 +51,7 @@ export class AuthService {
       authData
     ).pipe(
       map(res => {
-        this.saveToken(res['idToken']);
+        this.saveToken(res['idToken'], res['expiresIn']);
         return res;
       })
     );
