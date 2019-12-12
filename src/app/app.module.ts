@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -12,21 +14,31 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { RegistroComponent } from './pages/registro/registro.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './login/registro.component';
+import { LoginComponent } from './login/login.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
-    HomeComponent,
-    LoginComponent
+    DashboardComponent,
+    LoginComponent,
+    NotfoundComponent,
+    DashboardComponent,
+    HeaderComponent,
+    SidebarComponent,
+    PagesComponent
   ],
   imports: [
     FormsModule,
@@ -35,6 +47,8 @@ import { LoginComponent } from './pages/login/login.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
+    MatToolbarModule,
+    MatMenuModule,
     MatCardModule,
     MatListModule,
     MatGridListModule,
@@ -42,7 +56,8 @@ import { LoginComponent } from './pages/login/login.component';
     MatCheckboxModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

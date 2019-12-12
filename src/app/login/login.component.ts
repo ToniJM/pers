@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         } else {
           localStorage.removeItem('email');
         }
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/dashboard');
       }, (err) => {
         this.waiting = false;
         form.form.enable();
