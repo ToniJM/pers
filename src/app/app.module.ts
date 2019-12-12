@@ -22,23 +22,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { RegistroComponent } from './login/registro.component';
 import { LoginComponent } from './login/login.component';
-import { NotfoundComponent } from './notfound/notfound.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { PagesComponent } from './pages/pages.component';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
-    DashboardComponent,
-    LoginComponent,
-    NotfoundComponent,
-    DashboardComponent,
-    HeaderComponent,
-    SidebarComponent,
-    PagesComponent
+    LoginComponent
   ],
   imports: [
     FormsModule,
@@ -47,6 +37,7 @@ import { PagesComponent } from './pages/pages.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
+    PagesModule,
     MatToolbarModule,
     MatMenuModule,
     MatCardModule,

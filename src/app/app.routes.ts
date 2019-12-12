@@ -4,7 +4,7 @@ import { PagesComponent } from './pages/pages.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegistroComponent } from './login/registro.component';
 import { LoginComponent } from './login/login.component';
-import { NotfoundComponent } from './notfound/notfound.component';
+import { NotfoundComponent } from './shared/notfound/notfound.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
