@@ -22,7 +22,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { RegistroComponent } from './login/registro.component';
 import { LoginComponent } from './login/login.component';
+
 import { PagesModule } from './pages/pages.module';
+import { DialogsModule } from './dialogs/dialogs.module';
+import { PersonaDialogComponent } from './dialogs/persona-dialog/persona-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     BrowserAnimationsModule,
     PagesModule,
+    DialogsModule,
     AppRoutingModule,
     FontAwesomeModule,
     MatToolbarModule,
