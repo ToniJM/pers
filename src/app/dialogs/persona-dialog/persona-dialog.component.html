@@ -1,27 +1,27 @@
 <h1 mat-dialog-title>Add Persona</h1>
 <div mat-dialog-content>
-    <mat-list>
-        <mat-list-item>
-            <mat-form-field>
+    <div fxLayout="row" fxLayoutAlign="space-between none">
+        <div>
+            <mat-form-field fxFlexAlign="stretch">
                 <input matInput [(ngModel)]="persona.firstname" placeholder="First Name">
             </mat-form-field>
-        </mat-list-item>
-        <mat-list-item>
+        </div>
+        <div>
             <mat-form-field>
                 <input matInput [(ngModel)]="persona.lastname" placeholder="Last Name">
             </mat-form-field>
-        </mat-list-item>
-        <mat-list-item>
+        </div>
+        <div>
             <mat-form-field>
                 <input matInput [(ngModel)]="persona.alias" placeholder="Alias">
             </mat-form-field>
-        </mat-list-item>
-        <mat-list-item>
+        </div>
+        <div>
             <mat-form-field>
                 <input matInput [(ngModel)]="persona.title" placeholder="Title">
             </mat-form-field>
-        </mat-list-item>
-        <mat-list-item>
+        </div>
+        <div>
             <mat-form-field>
                 <mat-label>Gender</mat-label>
                 <mat-select>
@@ -29,15 +29,15 @@
                     <mat-option value="F">Female</mat-option>
                 </mat-select>
             </mat-form-field>
-        </mat-list-item>
-        <mat-list-item>
+        </div>
+        <div>
             <mat-form-field>
                 <input matInput [matDatepicker]="picker" placeholder="birthday Date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-        </mat-list-item>
-    </mat-list>
+        </div>
+    </div>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancelClick()">Cancel</button>
