@@ -10,7 +10,7 @@ import { PersonaModel } from '../models/persona.model';
 export class PersonaService {
   personas: Observable<PersonaModel>;
 
-  constructor(db: AngularFirestore) {
-    this.personas = 
-  }
+  // constructor(db: AngularFirestore) {
+  //   this.personas = 
+  // }
 }

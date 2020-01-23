@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -21,6 +22,7 @@ import { PersonaDialogComponent } from './persona-dialog/persona-dialog.componen
         PersonaDialogComponent
     ],
     imports: [
+        BrowserModule,
         FormsModule,
         MatDialogModule,
         MatFormFieldModule,
