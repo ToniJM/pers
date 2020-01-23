@@ -1,45 +1,64 @@
 <h1 mat-dialog-title>Add Persona</h1>
 <div mat-dialog-content>
-    <div fxLayout="row" fxLayoutAlign="space-between none">
-        <div>
-            <mat-form-field>
-                <input matInput [(ngModel)]="persona.firstname" placeholder="First Name">
-            </mat-form-field>
+    <form #form="ngForm">
+        <div fxLayout="row" fxLayoutAlign="space-between none">
+            <div>
+                <mat-form-field>
+                    <input matInput 
+                        name='firstname'
+                        [(ngModel)]="persona.firstname"
+                        placeholder="First Name">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput
+                        name="lastname"
+                        [(ngModel)]="persona.lastname"
+                        placeholder="Last Name">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput
+                        name="alias"
+                        [(ngModel)]="persona.alias"
+                        placeholder="Alias">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput
+                        name="title"
+                        [(ngModel)]="persona.title"
+                        placeholder="Title">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Gender</mat-label>
+                    <mat-select name="gender"
+                        [(ngModel)]="persona.gender">
+                        <mat-option value="M">Male</mat-option>
+                        <mat-option value="F">Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput
+                        name="birthdate"
+                        [(ngModel)]="persona.birthdate"
+                        [matDatepicker]="picker"
+                        placeholder="Birthday Date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
         </div>
-        <div>
-            <mat-form-field>
-                <input matInput [(ngModel)]="persona.lastname" placeholder="Last Name">
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <input matInput [(ngModel)]="persona.alias" placeholder="Alias">
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <input matInput [(ngModel)]="persona.title" placeholder="Title">
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Gender</mat-label>
-                <mat-select [(ngModel)]="persona.gender">
-                    <mat-option value="M">Male</mat-option>
-                    <mat-option value="F">Female</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <input matInput [(ngModel)]="persona.birthdate" [matDatepicker]="picker" placeholder="birthday Date">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-        </div>
-    </div>
+    </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancelClick()">Cancel</button>
-  <button mat-flat-button [mat-dialog-close]="persona" cdkFocusInitial color="primary">Save</button>
+  <button mat-flat-button (click)="onSaveClick(form)" [mat-dialog-close]="persona" cdkFocusInitial color="primary">Save</button>
 </div>
