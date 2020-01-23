@@ -31,6 +31,10 @@ export class HeaderComponent implements OnInit {
     const personaDialog = this.dialog.open(PersonaDialogComponent, {
       data: new PersonaModel()
     });
+
+    personaDialog.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 
 }

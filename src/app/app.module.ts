@@ -3,6 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -27,7 +29,7 @@ import { LoginComponent } from './login/login.component';
 
 import { PagesModule } from './pages/pages.module';
 import { DialogsModule } from './dialogs/dialogs.module';
-import { PersonaDialogComponent } from './dialogs/persona-dialog/persona-dialog.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { PersonaDialogComponent } from './dialogs/persona-dialog/persona-dialog.
   imports: [
     FormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firabase),
+    AngularFirestoreModule,
     BrowserModule,
     BrowserAnimationsModule,
     PagesModule,

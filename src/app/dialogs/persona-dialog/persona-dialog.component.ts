@@ -15,6 +15,7 @@ export class PersonaDialogComponent {
   ) { }
 
   onCancelClick() {
+    console.log('close');
     this.dialogRef.close();
   }
 

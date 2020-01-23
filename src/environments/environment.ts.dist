@@ -5,7 +5,13 @@
 export const environment = {
   production: false,
   firabase: {
-    apiKey: 'FIREBASE PROJECT API KEY HERE'
+    apiKey: 'FIREBASE PROJECT API KEY HERE',
+    authDomain: 'PROJECT_ID.firebaseapp.com',
+    databaseURL: 'https://PROJECT_ID.firebaseio.com',
+    projectId: 'PROJECT_ID',
+    storageBucket: 'PROJECT_ID.appspot.com',
+    messagingSenderId: '916912759366',
+    appId: 'FIREBASE APP ID HERE'
   }
 };
 

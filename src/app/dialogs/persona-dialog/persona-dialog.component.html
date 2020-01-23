@@ -2,7 +2,7 @@
 <div mat-dialog-content>
     <div fxLayout="row" fxLayoutAlign="space-between none">
         <div>
-            <mat-form-field fxFlexAlign="stretch">
+            <mat-form-field>
                 <input matInput [(ngModel)]="persona.firstname" placeholder="First Name">
             </mat-form-field>
         </div>
@@ -24,7 +24,7 @@
         <div>
             <mat-form-field>
                 <mat-label>Gender</mat-label>
-                <mat-select>
+                <mat-select [(ngModel)]="persona.gender">
                     <mat-option value="M">Male</mat-option>
                     <mat-option value="F">Female</mat-option>
                 </mat-select>
@@ -32,7 +32,7 @@
         </div>
         <div>
             <mat-form-field>
-                <input matInput [matDatepicker]="picker" placeholder="birthday Date">
+                <input matInput [(ngModel)]="persona.birthdate" [matDatepicker]="picker" placeholder="birthday Date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -41,5 +41,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancelClick()">Cancel</button>
-  <button mat-button [mat-dialog-close]="persona" cdkFocusInitial>Save</button>
+  <button mat-flat-button [mat-dialog-close]="persona" cdkFocusInitial color="primary">Save</button>
 </div>

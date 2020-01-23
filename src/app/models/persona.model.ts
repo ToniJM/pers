@@ -1,8 +1,9 @@
 export class PersonaModel {
-    firstname: string;
-    lastname: string;
+    userId?: string;
+    firstname?: string;
+    lastname?: string;
     alias: string;
-    title: string;
+    title?: string;
     gender: string;
-    birthdate: string;
+    birthdate?: string;
 }
